@@ -71,14 +71,14 @@ conda create -n fastqc -c bioconda fastqc
 ### Usage
 The following section details the commands used to run the analysis. Activate the appropriate conda environment before running each step. The actual scripts are located in the /scripts directory of this repository.
 
-## Quality Control
+#### Quality Control
 Activate the `jellyfish` and `fastqc` environments.
 ```bash
 conda activate jellyfish
 bash scripts/run_jellyfish.sh
 ```
 
-## Genome Assembly
+#### Genome Assembly
 Activate the corresponding environment for each assembler.
 
 **MaSuRCA:**
@@ -101,13 +101,13 @@ bash scripts/run_spades_for_dbg2olc.sh
 conda activate dbg2olc
 bash scripts/run_dbg2olc.sh
 ```
-## Assembly Polishing
+#### Assembly Polishing
 Activate the `pilon` environment. This step needs to be repeated for each of the three assemblies.
 ```bash
 conda activate pilon
 bash scripts/run_pilon.sh path/to/assembly.fasta
 ```
-## Quality Assessment
+#### Quality Assessment
 Activate the `quast` and `merqury` environments.
 
 **Quast:**
