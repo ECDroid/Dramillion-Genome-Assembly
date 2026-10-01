@@ -68,17 +68,17 @@ conda create -n merqury -c bioconda merqury meryl
 conda create -n fastqc -c bioconda fastqc
 ```
 
-### Usage
+## Usage
 The following section details the commands used to run the analysis. Activate the appropriate conda environment before running each step. The actual scripts are located in the /scripts directory of this repository.
 
-#### Quality Control
+### Quality Control
 Activate the `jellyfish` and `fastqc` environments.
 ```bash
 conda activate jellyfish
 bash scripts/run_jellyfish.sh
 ```
 
-#### Genome Assembly
+### Genome Assembly
 Activate the corresponding environment for each assembler.
 
 **MaSuRCA:**
@@ -101,13 +101,13 @@ bash scripts/run_spades_for_dbg2olc.sh
 conda activate dbg2olc
 bash scripts/run_dbg2olc.sh
 ```
-#### Assembly Polishing
+### Assembly Polishing
 Activate the `pilon` environment. This step needs to be repeated for each of the three assemblies.
 ```bash
 conda activate pilon
 bash scripts/run_pilon.sh path/to/assembly.fasta
 ```
-#### Quality Assessment
+### Quality Assessment
 Activate the `quast` and `merqury` environments.
 
 **Quast:**
@@ -120,7 +120,7 @@ quast.py path/to/assembly1.fasta path/to/assembly2.fasta -o quast_results
 conda activate merqury
 bash scripts/run_merqury.sh path/to/assembly.fasta
 ```
-### Results and Conclusion
+## Results and Conclusion
 **MaSuRCA** was chosen as the best assembler for this dataset.
 
 **Contiguity**: MaSuRCA produced the assembly with the highest N50 value (159,039 bp) and the longest contig (367,974 bp).
