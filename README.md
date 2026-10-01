@@ -74,24 +74,24 @@ The following section details the commands used to run the analysis. Activate th
 ## Quality Control
 Activate the `jellyfish` and `fastqc` environments.
 ```bash
-# Example for running Jellyfish
 conda activate jellyfish
 bash scripts/run_jellyfish.sh
 ```
 
 ## Genome Assembly
 Activate the corresponding environment for each assembler.
-MaSuRCA:
+
+**MaSuRCA:**
 ```bash
 conda activate masurca
 bash scripts/run_masurca.sh
 ```
-HybridSPAdes:
+**HybridSPAdes:**
 ```bash
 conda activate spades
 bash scripts/run_hybridspades.sh
 ```
-DBG2OLC:
+**DBG2OLC:**
 ```bash
 # First, run SPAdes for short-read contigs
 conda activate spades
@@ -109,24 +109,25 @@ bash scripts/run_pilon.sh path/to/assembly.fasta
 ```
 ## Quality Assessment
 Activate the `quast` and `merqury` environments.
-Quast:
+
+**Quast:**
 ```bash
 conda activate quast
 quast.py path/to/assembly1.fasta path/to/assembly2.fasta -o quast_results
 ```
-Merqury:
+**Merqury:**
 ```bash
 conda activate merqury
 bash scripts/run_merqury.sh path/to/assembly.fasta
 ```
 ### Results and Conclusion
-MaSuRCA was chosen as the best assembler for this dataset.
+**MaSuRCA** was chosen as the best assembler for this dataset.
 
-Contiguity: MaSuRCA produced the assembly with the highest N50 value (159,039 bp) and the longest contig (367,974 bp).
+**Contiguity**: MaSuRCA produced the assembly with the highest N50 value (159,039 bp) and the longest contig (367,974 bp).
 
-Accuracy: The assembly had zero ambiguous bases (N's) per 100 kbp.
+**Accuracy**: The assembly had zero ambiguous bases (N's) per 100 kbp.
 
-Completeness: Merqury analysis showed a completeness score of 97.59%, which was highly competitive and indicated very few missing k-mers from the original reads.
+**Completeness**: Merqury analysis showed a completeness score of 97.59%, which was highly competitive and indicated very few missing k-mers from the original reads.
 
 Although HybridSPAdes had a slightly higher completeness score (97.74%), its assembly was more fragmented (lower N50) and contained ambiguous bases. DBG2OLC produced a much shorter and less complete assembly. Therefore, MaSuRCA provided the best balance of contiguity, accuracy, and completeness for this genome.
 
