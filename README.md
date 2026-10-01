@@ -38,9 +38,12 @@ As per the analysis, several bioinformatics tools are required. The following co
 **Jellyfish (for k-mer analysis)**
 ```bash
 conda create -n jellyfish -c bioconda jellyfish
+```
 
 **SPAdes (for HybridSPAdes and DBG2OLC pre-assembly)**
+```bash
 conda create -n spades -c bioconda spades
+```
 
 **MaSuRCA (for MaSuRCA assembly)**
 conda create -n masurca -c bioconda masurca
