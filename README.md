@@ -46,19 +46,26 @@ conda create -n spades -c bioconda spades
 ```
 
 **MaSuRCA (for MaSuRCA assembly)**
+```bash
 conda create -n masurca -c bioconda masurca
-
+```
 **DBG2OLC (for DBG2OLC assembly)**
+```bash
 conda create -n dbg2olc -c bioconda dbg2olc
-
+```
 **Pilon (for assembly polishing)**
+```bash
 conda create -n pilon -c bioconda pilon bwa samtools
-
+```
 **Quast (for assembly statistics)**
+```bash
 conda create -n quast -c bioconda quast
-
+```
 **Merqury (for k-mer based evaluation)**
+```bash
 conda create -n merqury -c bioconda merqury meryl
-
+```
 **FastQC (for read quality control)**
+```bash
 conda create -n fastqc -c bioconda fastqc
+```
